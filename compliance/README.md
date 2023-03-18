@@ -6,7 +6,7 @@ Looks like there is still some debate about how to compare security, policy, and
 - Red Hat Advanced Cluster Security - RHACS
 
 **We sometimes get similar feedback from existing OpenShift customers asking about differences, and similarities between OCP, RHACM, and RHACS in addition to best practices on how to use all together to manage security and compliance.**
-![](compliance-01.png)
+![](rh-compliance-00.png)
 ##OpenShift Compliance Operator
 Starting with Openshift, It comes with a built-in compliance operator that allows administrators to describe the desired compliance state of a cluster and provides them with an overview of gaps and ways to remediate them.
 
