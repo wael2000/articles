@@ -37,4 +37,4 @@ While It is clear the role of compliance operator in OCP, the confusion starts w
 
 ## Red Hat Advanced Cluster Security
 RHACS helps improve the security of the application build process, protect the application platform and configurations, and detect and respond to runtime issues. It comes with a **built-in policy engine** that includes hundreds of built-in controls to enforce DevOps and security-focused best practices based on industry standards such as Center for Internet Security (CIS) Benchmarks and National Institute of Standards Technology (NIST) guidelines, configuration management of both containers and Kubernetes, and runtime security.
-Compliance is one of the core areas RHACS covers, as It can audit your systems against CIS Benchmarks, NIST, PCI, and HIPAA, with interactive dashboards and one-click audit reports.
+Compliance is one of the core areas RHACS covers, as It can audit your systems against CIS Benchmarks, NIST, PCI, and HIPAA, with interactive dashboards  presenting overall systems violations, compliance statistics and top risky deployments across all managed clusters and one-click for on-demand scanning audit reports.
