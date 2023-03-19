@@ -13,9 +13,16 @@ Starting with Openshift, It comes with a built-in compliance operator that allow
 The assessment requires a continuous scanning for both API resources and nodes, this happens using OpenSCAP, a NIST-certified tool, to scan and enforce security policies provided by the compliance content/configuration.
 
 The compliance content is grouped into compliance profiles. There are numerous predefined industry standard profiles like FISMA, CIS OCP benchmark, PCI-DSS, NERC-CIP, But you can also create your own profiles.
+
 ![](rh-compliance-00.png)
+
+------------
+
 All the above mentioned features come with the OpenShift compliance operator, So OpenShift does not need any extra component to achieve this.
+
 ![](rh-compliance-01.png)
+
+------------
 
 ### Red Hat Advanced Cluster Management
 While It is clear the role of compliance operator in OCP, the confusion starts when we add RHACM as a management layer that already comes with policy and compliance features and here is the explaination:
@@ -27,3 +34,7 @@ While It is clear the role of compliance operator in OCP, the confusion starts w
 `So,`RHACM does NOT provide any scanning based on the OpenSCAP contents, but it guarantees the required configurations are loaded across the managed clusters to secure them.
 
 ![](rh-compliance-02.png)
+
+## Red Hat Advanced Cluster Security
+RHACS helps improve the security of the application build process, protect the application platform and configurations, and detect and respond to runtime issues. It comes with a **built-in policy engine** that includes hundreds of built-in controls to enforce DevOps and security-focused best practices based on industry standards such as Center for Internet Security (CIS) Benchmarks and National Institute of Standards Technology (NIST) guidelines, configuration management of both containers and Kubernetes, and runtime security.
+Compliance is one of the core areas RHACS covers, as It can audit your systems against CIS Benchmarks, NIST, PCI, and HIPAA, with interactive dashboards and one-click audit reports.
