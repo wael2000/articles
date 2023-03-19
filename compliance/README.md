@@ -37,7 +37,7 @@ When compliance is mentioned in the context of RHACM, it refers to RHACM’s abi
 ![](rh-compliance-02.png)
 
 ### RHACM and Gatekeeper/Open Policy Agent (OPA)
-Having said that, RHACM is also shipped with a buit-in policy to deploy the [Gatekeeper/Open Policy Agent (OPA)](http://https://github.com/gatekeeper/gatekeeper-operator "Gatekeeper/Open Policy Agent (OPA)") operator on the managed clusters, after deployment, RHACM uses its policy framework to propagate Gatekeeper policy from Hub to the managed cluster.
+Having said that, RHACM is also shipped with a buit-in policy to deploy the [Gatekeeper/Open Policy Agent (OPA)](https://github.com/gatekeeper/gatekeeper-operator "Gatekeeper/Open Policy Agent (OPA)") operator on the managed clusters, after deployment, RHACM uses its policy framework to propagate Gatekeeper policy from Hub to the managed cluster.
 
 OPA is another policy engine (CNCF graduated project), It helps in making decisions based on the policy using a policy language called Rego. API Server can be configured to query OPA for admission control decisions when API objects are created, updated, or deleted.
 
@@ -51,10 +51,17 @@ RHACS helps improve the security of the application build process, protect the a
 Compliance is one of the core areas RHACS covers, as It can audit your systems against CIS Benchmarks, NIST, PCI, and HIPAA, with interactive dashboards  presenting overall systems violations, compliance statistics and top risky deployments across all managed clusters and one-click for on-demand scanning audit reports.
 
 ## Best Practices
-
-- OpenShift provides the foundation for the platform compliance capabilities using its compliance operator.
-- There are other components contribute the platform compliance including GateKeeper/OPA and kyverno.
--  RHACM is typically used to install the compliance operator and to run the scans.
+- ### Technically
+ - OpenShift provides the foundation for the platform compliance capabilities using its **OpenShift compliance operator** as a main/built-in policy engine.
+ - There are other policy engines contribute the platform compliance including **GateKeeper/OPA** and **kyverno**.
+ - Policy engines need to run on the managed clusters where we need to enforce the policies.
+ - OpenShift provides basic admin interface to deal with policy and audit scanning outcome, as there is **no integrated reports or dashboards in OpenShift**.
+[Manage compliance scans]( https://docs.openshift.com/container-platform/4.12/security/compliance_operator/compliance-scans.html "Manage compliance scans"), [Obtain scanning results](https://docs.openshift.com/container-platform/4.12/security/compliance_operator/compliance-operator-raw-results.html "Obtain scanning results"), [Manage remediation actions](https://docs.openshift.com/container-platform/4.12/security/compliance_operator/compliance-operator-remediation.html "Manage remediation actions"), All are CLI based and not through the admin web console.
+ - scanning outcome can be extracted and 
+- ### Manageability
+ - OpenShift Cluster admins need to install the required policy engines and look after policy activation on OpenShift cluster (**Still manageable with limited number of clusters!**)
+ - ManaWith more than cluster in addition to the need to enforce different policies - compliance profiles - per cluster, RHACM offers cross cluster policy engine management as It is typically used to install those engines to all managed clusters
+- a compliance operator and to run the scans.
 -  RHACS is best used to review the results via the user-friendly dashboard
 - When RHACM and RHACS are co-deployed, you can choose to enable the shared functionality in one product only, for example, we can enable the OpenShift compliance operator integration in RHACS while we focus more on other policies in RHACM.
 - once voliaions are detected, and then leverage RHACM (for platform) and Kyverno (for workload) to define policies (if not already available) to remediate any findings. Rinse and repeat until the audit person leaves the room looking a little happier.
