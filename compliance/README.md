@@ -8,7 +8,7 @@ Looks like there is still some debate about how to compare security, policy, and
 **We sometimes get similar feedback from existing OpenShift customers asking about differences, and similarities between OCP, RHACM, and RHACS in addition to best practices on how to use all together to manage security and compliance.**
 
 ## OpenShift Compliance Operator
-Starting with Openshift, It comes with a built-in compliance operator that allows administrators to describe the desired compliance state of a cluster and provides them with an overview of gaps and ways to remediate them.
+Starting with Openshift, It comes with a built-in [compliance operator](http://https://github.com/openshift/compliance-operator "compliance operator") that allows administrators to describe the desired compliance state of a cluster and provides them with an overview of gaps and ways to remediate them.
 
 The assessment requires a continuous scanning for both API resources and nodes, this happens using OpenSCAP, a NIST-certified tool, to scan and enforce security policies provided by the compliance content/configuration.
 
@@ -37,7 +37,7 @@ When compliance is mentioned in the context of RHACM, it refers to RHACM’s abi
 ![](rh-compliance-02.png)
 
 ### RHACM amd Gatekeeper/Open Policy Agent (OPA)
-Having said that, RHACM is also shipped with a buit-in policy to deploy the Gatekeeper/Open Policy Agent (OPA) operator on the managed clusters, after deployment, RHACM uses its policy framework to propagate Gatekeeper policy from Hub to the managed cluster.
+Having said that, RHACM is also shipped with a buit-in policy to deploy the [Gatekeeper/Open Policy Agent (OPA)](http://https://github.com/gatekeeper/gatekeeper-operator "Gatekeeper/Open Policy Agent (OPA)") operator on the managed clusters, after deployment, RHACM uses its policy framework to propagate Gatekeeper policy from Hub to the managed cluster.
 
 OPA is another policy engine (CNCF graduated project), It helps in making decisions based on the policy using a policy language called Rego. API Server can be configured to query OPA for admission control decisions when API objects are created, updated, or deleted.
 
@@ -46,4 +46,10 @@ RHACS helps improve the security of the application build process, protect the a
 Compliance is one of the core areas RHACS covers, as It can audit your systems against CIS Benchmarks, NIST, PCI, and HIPAA, with interactive dashboards  presenting overall systems violations, compliance statistics and top risky deployments across all managed clusters and one-click for on-demand scanning audit reports.
 
 ## Best Practices
-RHACM is typically used to install the compliance operator and to run the scans. Then use RHACS to review the results via the user-friendly dashboard and then leverage RHACM (for platform) and Kyverno (for workload) to define policies (if not already available) to remediate any findings. Rinse and repeat until the audit person leaves the room looking a little happier.
+
+- OpenShift provides the foundation for the platform compliance capabilities using its compliance operator.
+- There are other components contribute the platform compliance including GateKeeper/OPA and kyverno.
+-  RHACM is typically used to install the compliance operator and to run the scans.
+-  RHACS is best used to review the results via the user-friendly dashboard
+- When RHACM and RHACS are co-deployed, you can choose to enable the shared functionality in one product only, for example, we can enable the OpenShift compliance operator integration in RHACS while we focus more on other policies in RHACM.
+- once voliaions are detected, and then leverage RHACM (for platform) and Kyverno (for workload) to define policies (if not already available) to remediate any findings. Rinse and repeat until the audit person leaves the room looking a little happier.
