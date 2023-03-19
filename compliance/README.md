@@ -36,10 +36,15 @@ When compliance is mentioned in the context of RHACM, it refers to RHACM’s abi
 
 ![](rh-compliance-02.png)
 
-### RHACM amd Gatekeeper/Open Policy Agent (OPA)
+### RHACM and Gatekeeper/Open Policy Agent (OPA)
 Having said that, RHACM is also shipped with a buit-in policy to deploy the [Gatekeeper/Open Policy Agent (OPA)](http://https://github.com/gatekeeper/gatekeeper-operator "Gatekeeper/Open Policy Agent (OPA)") operator on the managed clusters, after deployment, RHACM uses its policy framework to propagate Gatekeeper policy from Hub to the managed cluster.
 
 OPA is another policy engine (CNCF graduated project), It helps in making decisions based on the policy using a policy language called Rego. API Server can be configured to query OPA for admission control decisions when API objects are created, updated, or deleted.
+
+### RHACM and kyverno
+[Kyverno](https://github.com/kyverno/kyverno "Kyverno") is a policy engine designed for Kubernetes. It can validate, mutate, and generate configurations using admission controls and background scans.
+Kyverno policy sets are supported as part of Red Hat Advanced Cluster Management.
+once any of the supported Kyverno cluster policies is created, RHACM will then manage where to enforce it using its placement rules.
 
 ## Red Hat Advanced Cluster Security
 RHACS helps improve the security of the application build process, protect the application platform and configurations, and detect and respond to runtime issues. It comes with a **built-in policy engine** that includes hundreds of built-in controls to enforce DevOps and security-focused best practices based on industry standards such as Center for Internet Security (CIS) Benchmarks and National Institute of Standards Technology (NIST) guidelines, configuration management of both containers and Kubernetes, and runtime security.
