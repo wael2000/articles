@@ -1,6 +1,6 @@
 # Policy and Compliance in Red Hat cloud stack
 ## One capability and three perspectives!
-There is still some debate about how to compare security, policy, and compliance in Red Hat cloud stack products, we are certainly talking about following three products:
+There is still some debate about comparing security, policy, and compliance in Red Hat cloud stack products, we are certainly talking about following three products:
 - Red Hat OpenShift - OCP
 - Red Hat Advanced Cluster Management - RHACM
 - Red Hat Advanced Cluster Security - RHACS
