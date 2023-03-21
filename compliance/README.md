@@ -57,7 +57,6 @@ Compliance is one of the core areas RHACS covers, as It can audit your systems a
  - Policy engines need to run on the managed clusters where we need to enforce the policies.
  - OpenShift provides basic admin interface to deal with policy and audit scanning outcome, as there is **no integrated reports or dashboards in OpenShift**.
 [Manage compliance scans]( https://docs.openshift.com/container-platform/4.12/security/compliance_operator/compliance-scans.html "Manage compliance scans"), [Obtain scanning results](https://docs.openshift.com/container-platform/4.12/security/compliance_operator/compliance-operator-raw-results.html "Obtain scanning results"), [Manage remediation actions](https://docs.openshift.com/container-platform/4.12/security/compliance_operator/compliance-operator-remediation.html "Manage remediation actions"), All are CLI based and not through the admin web console.
- - scanning outcome can be extracted and 
 - ### Manageability
  - With OpenShift alone, Cluster admins need to install the required policy engines and enable the required policies on OpenShift per cluster (**Still manageable with limited number of clusters!**)
  - In the case of multipe OpenShift clusters, RHACM offers cross cluster policy engine management as It is typically used to install those engines to all managed clusters
